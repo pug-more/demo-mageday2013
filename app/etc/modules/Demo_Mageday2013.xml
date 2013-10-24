@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<modules>
+ 		<Demo_Mageday2013>
+			<active>true</active>
+			<codePool>local</codePool>
+		</Demo_Mageday2013>
+	</modules>
+</config>

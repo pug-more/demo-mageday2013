@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Demo_Mageday2013>
+            <version>0.1.0</version>
+        </Demo_Mageday2013>
+    </modules>
+    <global>
+
+        <models>
+            <demmag2013>
+                <class>Demo_Mageday2013_Model</class>
+                <resourceModel>demmag2013_mysql4</resourceModel>
+            </demmag2013>
+            <demmag2013_mysql4>
+                <class>Demo_Mageday2013_Model_Mysql4</class>
+                <entities>
+                    <magazzini>
+                        <table>demmag2013_magazzini</table>
+                    </magazzini>
+                </entities>
+            </demmag2013_mysql4>
+        </models>
+
+        <helpers>
+            <demmag2013>
+                <class>Demo_Mageday2013_Helper</class>
+            </demmag2013>
+        </helpers>
+
+        <blocks>
+            <demmag2013>
+                <class>Demo_Mageday2013_Block</class>
+            </demmag2013>
+        </blocks>
+
+        <resources>
+            <demmag2013_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </demmag2013_write>
+
+            <demmag2013_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </demmag2013_read>
+
+            <demmag2013_setup>
+                <setup>
+                    <module>Demo_Mageday2013</module>
+                    <class>Demo_Mageday2013_Model_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </demmag2013_setup>
+        </resources>
+
+        <events>
+
+            <!--core_block_abstract_to_html_after>
+                    <observers>
+                        <demmag2013_observer>
+                            <type>singleton</type>
+                            <class>demmag2013/observer</class>
+                            <method>metodo</method>
+                        </demmag2013_observer>
+                    </observers>
+            </core_block_abstract_to_html_after-->
+
+        </events>
+
+    </global>
+    <adminhtml>
+        <menu>
+            <sales>
+                <children>
+                    <demmag2013 translate="title" module="demmag2013">
+                        <title>Demo Mageday 2013</title>
+                        <sort_order>99</sort_order>
+                        <children>
+                            <magazzini translate="title">
+                                <title>Magazzini</title>
+                                <sort_order>40</sort_order>
+                                <action>demmag2013/adminhtml_magazzini</action>
+                            </magazzini>
+                        </children>
+                    </demmag2013>
+                </children>
+            </sales>
+        </menu>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <sales>
+                            <children>
+                                <demmag2013 translate="title" module="demmag2013">
+                                    <title>Demo Mageday 2013</title>
+                                    <sort_order>99</sort_order>
+                                    <children>
+                                        <magazzini translate="title">
+                                            <title>Magazzini</title>
+                                            <sort_order>40</sort_order>
+                                        </magazzini>
+                                    </children>
+                                </demmag2013>
+                            </children>
+                        </sales>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <translate>
+            <modules>
+                <Demo_Mageday2013>
+                    <files>
+                        <default>Demo_Mageday2013.csv</default>
+                    </files>
+                </Demo_Mageday2013>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <demmag2013>
+                    <file>../../../../../code/local/Demo/Mageday2013/layout/demmag2013.xml</file>
+                </demmag2013>
+            </updates>
+        </layout>
+    </adminhtml>
+    <frontend>
+        <routers>
+            <demmag2013>
+                <use>standard</use>
+                <args>
+                    <module>Demo_Mageday2013</module>
+                    <frontName>demmag2013</frontName>
+                </args>
+            </demmag2013>
+        </routers>
+
+        <translate>
+            <modules>
+                <Demo_Mageday2013>
+                    <files>
+                        <default>Demo_Mageday2013.csv</default>
+                    </files>
+                </Demo_Mageday2013>
+            </modules>
+        </translate>
+
+        <layout>
+            <updates>
+                <demmag2013>
+                    <file>../../../../../code/local/Demo/Mageday2013/layout/demmag2013.xml</file>
+                </demmag2013>
+            </updates>
+        </layout>
+
+    </frontend>
+
+</config>

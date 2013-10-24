@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+
+    <demmag2013_index_index translate="label">
+        <label>Demo Mageday2013</label>
+    </demmag2013_index_index>
+
+    <demmag2013_adminhtml_magazzini_index>
+        <reference name="content">
+            <block type="demmag2013/adminhtml_magazzini" name="demmag2013magazzino"/>
+        </reference>
+    </demmag2013_adminhtml_magazzini_index>
+
+</layout>
+
+        <!-- Put this function in your block
+        
+            protected function _getAllowSymlinks() # fix per la 1.6.0.0
+            {
+                return TRUE;    
+            }
+        
+                public function fetchView($fileName) {
+                    $this->setScriptPath(
+                            Mage::getModuleDir('','Demo_Mageday2013'). DS . 'templates'
+                    );
+                                
+                    return parent::fetchView($this->getTemplate());
+                }
+        
+          -->
