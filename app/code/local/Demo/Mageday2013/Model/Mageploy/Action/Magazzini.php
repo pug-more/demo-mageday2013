@@ -38,8 +38,6 @@ class Demo_Mageday2013_Model_Mageploy_Action_Magazzini extends PugMoRe_Mageploy_
             $new = 'new';
             $actionName = $this->_request->getActionName();
 
-
-
             // Convert ID
             if (isset($params['id'])) {
                 $new = 'existing';
@@ -52,6 +50,9 @@ class Demo_Mageday2013_Model_Mageploy_Action_Magazzini extends PugMoRe_Mageploy_
 
                 $code = $params['codice'];
                 $params['id'] = $code;
+            } else {
+                // In caso di New
+                $code = $params['codice'];
             }
 
             foreach ($this->_blankableParams as $key) {
