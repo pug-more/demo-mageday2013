@@ -161,4 +161,15 @@
 
     </frontend>
 
+    <default>
+        <mageploy>
+            <actions>
+                <demo_mageday2013>
+                    <disabled>0</disabled>
+                    <class>Demo_Mageday2013_Model_Mageploy_Action_Magazzini</class>
+                </demo_mageday2013>
+            </actions>
+        </mageploy>
+    </default>
+
 </config>
