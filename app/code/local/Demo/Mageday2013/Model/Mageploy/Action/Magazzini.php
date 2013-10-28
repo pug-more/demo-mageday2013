@@ -38,10 +38,19 @@ class Demo_Mageday2013_Model_Mageploy_Action_Magazzini extends PugMoRe_Mageploy_
             $new = 'new';
             $actionName = $this->_request->getActionName();
 
+
+
             // Convert ID
-            $code = $params['codice'];
             if (isset($params['id'])) {
                 $new = 'existing';
+
+                // In caso di Delete recuperare il codice del Magazzino
+                if (!isset($params['codice'])) {
+                    $magazzino = Mage::getModel('demmag2013/magazzini')->load($params['id']);
+                    $params['codice'] = $magazzino->getCodice();
+                }
+
+                $code = $params['codice'];
                 $params['id'] = $code;
             }
 
