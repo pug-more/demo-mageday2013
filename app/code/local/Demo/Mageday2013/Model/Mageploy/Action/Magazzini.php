@@ -88,6 +88,8 @@ class Demo_Mageday2013_Model_Mageploy_Action_Magazzini extends PugMoRe_Mageploy_
             $magazzino = Mage::getModel('demmag2013/magazzini')->load($code, 'codice');
             if ($magazzino->getId()) {
                 $parameters['id'] = $magazzino->getId();
+            } else {
+                throw new Exception("Magazzino '$code' not found!");
             }
         }
 
